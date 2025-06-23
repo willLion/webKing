@@ -21,7 +21,7 @@ const doSome = () => {
 }
 
 const someAttr = computed(()=>{
-    return 'someattr' + 'demo'
+    return 'someattr' + 'demo1'
 })
 const count = ref(0)
 </script>
