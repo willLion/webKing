@@ -1,14 +1,12 @@
 <template>
     <div>
       <router-view />
-      <div>{{ number }}</div>
     </div>
 </template>
 
 <script setup lang="ts">
   import {ref} from "vue";
 
-  const number = ref(0)
 </script>
 
 <style scoped>
