@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 export const constantRoutes = [
     {
         path:'/',
-        redirect:'/basic2'
+        redirect:'/com2'
     },
     {
         path: '/basic',
@@ -15,6 +15,10 @@ export const constantRoutes = [
     },    {
         path:'/com',
         component:()=>import('@/views/ComDemo/index.vue')
+    },
+    {
+        path:'/com2',
+        component:()=>import('@/views/ComDemo2/index.vue')
     }
 ]
 
