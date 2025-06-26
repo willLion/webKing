@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import {computed, nextTick, onMounted, onUpdated, reactive, ref, shallowRef} from "vue";
+import { computed, nextTick, onMounted, onUpdated, reactive, ref, shallowRef } from "vue";
 import MyCom from "./MyCom.vue";
 import itemsList from './items.vue'
 
@@ -111,7 +111,7 @@ const styleObject = ref({
     fontSize: '30px'
 })
 
-const items = ref([{message: 'Foo'}, {message: 'Bar'}])
+const items = ref([{ message: 'Foo' }, { message: 'Bar' }])
 
 const msgEmit = (param) => {
     console.log('msgEmit param', param)
@@ -169,14 +169,9 @@ onUpdated(() => {
             {{ msg }}
         </div>
         <div v-html="msgHtml"></div>
-        <div v-bind:id="1"
-             :index="2"
-             :vIndex
-        > v bind
+        <div v-bind:id="1" :index="2" :vIndex> v bind
         </div>
-        <div :myClass
-             v-bind="myClass"
-        >111
+        <div :myClass v-bind="myClass">111
         </div>
         <button :disabled="isDis">emit</button>
         <div>{{ true ? 'yes' : 'no' }}</div>
@@ -203,13 +198,12 @@ onUpdated(() => {
         </div>
         <div :class="classObj">class1</div>
         <div :class="[activeClass, errorClass]">class arr</div>
-        <MyCom class="container active"/>
+        <MyCom class="container active" />
         <div style="width: 100px;
         height: 100px;
-        background-color: pink"
-             :style="{
+        background-color: pink" :style="{
             color: activeColor,
-            fontsize: fontSize  + 'px'
+            fontsize: fontSize + 'px'
         }">style
         </div>
 
@@ -224,13 +218,10 @@ onUpdated(() => {
 
         <li v-for="item of items">{{ item }}</li>
 
-        <itemsList v-for="(item, index) in items"
-                   @msgEmit="msgEmit"
-                   :message="item.message"
-                   :msgGroup="item"
-                   :key="index"/>
-        <button v-on:click="count++">{{count}}</button>
-        <button @click="count++">{{count}}</button>
+        <itemsList v-for="(item, index) in items" @msgEmit="msgEmit" :message="item.message" :msgGroup="item"
+            :key="index" />
+        <button v-on:click="count++">{{ count }}</button>
+        <button @click="count++">{{ count }}</button>
         <button @click="greet($event)">greet</button>
         <button @click="e => greet(e)">greet</button>
         <button @clicke.stop="greet">stop greet</button>
