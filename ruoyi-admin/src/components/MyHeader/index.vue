@@ -1,13 +1,13 @@
 <template>
-  <div>
-aaa
-  </div>
+    <div>
+       header
+    </div>
 </template>
 
 <script setup lang="ts">
 
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 
 </style>

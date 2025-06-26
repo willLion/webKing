@@ -9,12 +9,22 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.5.17"
+    "@ant-design/icons-vue": "^7.0.1",
+    "ant-design-vue": "^4.2.6",
+    "axios": "^1.10.0",
+    "echarts": "^5.6.0",
+    "pinia": "^3.0.3",
+    "postcss-nesting": "^13.0.2",
+    "vue": "^3.5.17",
+    "vue-router": "^4.5.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.0",
     "@vue/tsconfig": "^0.7.0",
+    "less": "^4.3.0",
     "typescript": "~5.8.3",
+    "unplugin-auto-import": "^19.3.0",
+    "unplugin-vue-components": "^28.7.0",
     "vite": "^7.0.0",
     "vue-tsc": "^2.2.10"
   }
