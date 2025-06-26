@@ -42,7 +42,10 @@ const testObj = ref([
     }
 ])
 
-const shallowArray = shallowRef([])
+const shallowArray = shallowRef<{
+    name: string,
+    id: number
+}[]>([])
 
 interface Book {
     title: string,
@@ -113,7 +116,7 @@ const styleObject = ref({
 
 const items = ref([{ message: 'Foo' }, { message: 'Bar' }])
 
-const msgEmit = (param) => {
+const msgEmit = (param: any) => {
     console.log('msgEmit param', param)
 }
 
@@ -154,7 +157,7 @@ const changeShallowArray = async () => {
     console.log('shallowArray', shallowArray.value)
 }
 
-const greet = (e) => {
+const greet = (e: any) => {
     console.log('greet', e.target)
 }
 
