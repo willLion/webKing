@@ -4,12 +4,14 @@ import postcssNesting from "postcss-nesting";
 import path from "path";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
-import {AntDesignVueResolver} from "unplugin-vue-components/resolvers"
+import { AntDesignVueResolver } from "unplugin-vue-components/resolvers";
+
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
+
     AutoImport({
       imports: ["vue", "vue-router"],
       dts: "src/auto-import.d.ts",
@@ -22,10 +24,10 @@ export default defineConfig({
   ],
   server: {
     port: 5600,
-    host: '0.0.0.0',
+    host: "0.0.0.0",
     proxy: {
       "/api": {
-        target: "http://localhost:3333", 
+        target: "http://localhost:3333",
         changeOrigin: true,
         // secure: true, // 是否https接口
         // ws: true, // 是否代理websockets

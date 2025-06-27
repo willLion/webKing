@@ -1,17 +1,13 @@
 <template>
   <div>
-      <a-button @click="testMsg" type="primary">Primary Button</a-button>
+    <router-view/>
+
+    <Tailwind />
   </div>
 </template>
 
-<script setup lang="ts"> 
+<script setup lang="ts">
 
-  const $message: any = inject('$message')
-
-  const testMsg = ()=>{
-    console.log('testMsg');
-    $message.info('aaaaaaaaaa')
-  }
 </script>
 
 <style scoped>

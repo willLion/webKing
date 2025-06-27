@@ -7,7 +7,6 @@ import * as echarts from 'echarts'
 import pinia from '@/stores'
 import 'ant-design-vue/dist/reset.css';
 
-
 const app = createApp(App)
 
 
