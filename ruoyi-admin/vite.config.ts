@@ -13,11 +13,11 @@ export default defineConfig({
     AutoImport({
       imports: ["vue", "vue-router"],
       dts: "src/auto-import.d.ts",
-       resolvers: [AntDesignVueResolver()]
+      //  resolvers: [AntDesignVueResolver()]
     }),
     Components({
       dts: "src/components.d.ts",
-       resolvers: [AntDesignVueResolver({importStyle: true, resolveIcons: true})]
+      //  resolvers: [AntDesignVueResolver({importStyle: true, resolveIcons: true})]
     }),
   ],
   server: {
