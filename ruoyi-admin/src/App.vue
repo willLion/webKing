@@ -1,7 +1,9 @@
 <template>
-    <div>
-        <RouterView />
-    </div>
+  <div>
+    <router-view/>
+
+    <Tailwind />
+  </div>
 </template>
 
 <script setup lang="ts">

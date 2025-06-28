@@ -1,6 +1,6 @@
 <template>
     <div>
-        <RouterView />
+       header
     </div>
 </template>
 
@@ -8,6 +8,6 @@
 
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 
 </style>

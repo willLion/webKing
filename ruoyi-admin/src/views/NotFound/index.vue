@@ -1,6 +1,6 @@
 <template>
     <div>
-        <RouterView />
+        404
     </div>
 </template>
 
@@ -8,6 +8,6 @@
 
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 
 </style>

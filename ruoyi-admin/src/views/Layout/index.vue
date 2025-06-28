@@ -1,6 +1,8 @@
 <template>
     <div>
-        <RouterView />
+        <my-header />
+        <my-Aside />
+        layout
     </div>
 </template>
 
@@ -8,6 +10,6 @@
 
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 
 </style>
