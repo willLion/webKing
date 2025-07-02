@@ -57,7 +57,7 @@ const resetForm = () => {
 
 const getCodeImg = async () => {
     const res_code = await getCodeApi()
-    console.log('res_code', res_code)
+    console.log('res_code111', res_code)
 }
 
 
