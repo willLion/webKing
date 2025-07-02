@@ -7,7 +7,10 @@ import Components from "unplugin-vue-components/vite";
 import { AntDesignVueResolver } from "unplugin-vue-components/resolvers";
 
 
+
+const baseUrl = 'http://localhost:3333' // 后端接口
 // https://vite.dev/config/
+// @ts-ignore
 export default defineConfig({
   plugins: [
     vue(),
@@ -26,16 +29,21 @@ export default defineConfig({
     port: 5600,
     host: "0.0.0.0",
     proxy: {
-      "/api": {
-        target: "http://localhost:3333",
+      // detail: https://cli.vuejs.org/config/#devserver-proxy
+      [process.env.VUE_APP_BASE_API]: {
+        target: baseUrl,
         changeOrigin: true,
-        // secure: true, // 是否https接口
-        // ws: true, // 是否代理websockets
-        // 路径重写 ****
-        // 没有写 路径重写之前 的请求: http://localhost:8000/api/admin/logout
-        rewrite: (path) => path.replace(/^\/api/, ""),
+        pathRewrite: {
+          ['^' + process.env.VUE_APP_BASE_API]: ''
+        }
       },
+      // springdoc proxy
+      '^/v3/api-docs/(.*)': {
+        target: baseUrl,
+        changeOrigin: true
+      }
     },
+    disableHostCheck: true
   },
   resolve: {
     alias: {

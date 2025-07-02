@@ -1,26 +1,43 @@
 import { defineStore } from 'pinia'
+import {getToken} from '@/utils/token'
+import {LoginFormType} from '@/type/user'
+import {loginAPI} from "../../api/user.ts";
+
 export const useUserStore = defineStore('user', {
     state: () => {
         return {
-          counter: 0,
-          name: 'Eduardo',
+           token: getToken(),
+            id: '',
+            name: '',
+            nickName: '',
+            avatar: '',
+            roles: [],
+            permissions: []
         }
     },
     getters: {
         doubleCount: (state) => {
-            return state.counter * 2
+            return state.name
         },
     },
     actions: {
-        increment() {
-          this.counter++
+        // 登录
+        async loginForm(loginParam:LoginFormType) {
+            const userName = loginParam.userName.trim()
+            const password = loginParam.password
+            const code = loginParam.code
+            const uuid = loginParam.uuid
+
+             const res_login = await loginAPI({
+                 userName,
+                 password,
+                 code,
+                 uuid,
+             })
+
+            console.log('res_login', res_login)
         },
-        randomizeCounter() {
-            setTimeout(() => {
-                this.counter = Math.round(100 * Math.random())
-            }, 0);
-        },
-        async fnName(){
-        }
+        
+
     },
 })

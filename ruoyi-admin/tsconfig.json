@@ -1,7 +1,31 @@
 {
   "files": [],
+  "compilerOptions": {
+    // ...
+    "baseUrl": "./",
+    // 这里需要配置
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+      // 这里需要配置
+    }
+  },
   "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }
