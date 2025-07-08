@@ -27,8 +27,10 @@
 import {ValidateErrorEntity} from 'ant-design-vue/es/form/interface';
 import {LoginFormType} from '@/type/user'
 import {getCodeApi} from "../../api/user.ts";
+import {useUserStore} from '@/stores'
 
 
+const  uus = useUserStore()
 const formRef = ref();
 const formState: UnwrapRef<LoginFormType> = reactive({
     userName: '',
@@ -46,6 +48,7 @@ const onSubmit = () => {
         .validate()
         .then(() => {
             console.log('values', formState, toRaw(formState));
+            uus.loginFormAction(toRaw(formState))
         })
         .catch((error: ValidateErrorEntity<LoginFormType>) => {
             console.log('error', error);
